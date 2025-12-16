@@ -3,6 +3,10 @@ TICKERS = {
     "ETH": "ETH-USD",
     "SP500": "^GSPC",
     "NASDAQ": "^IXIC",
+        # US rates proxies (yields)
+    "US10Y": "^TNX",
+    "US3M": "^IRX",
+    "US30Y": "^TYX",
 }
 
 YF_PERIOD = "max"          # identique au notebook
