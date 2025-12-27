@@ -253,3 +253,108 @@ def plot_btc_vs_slope(df: pd.DataFrame, slope_col="US_slope_10Y_3M", btc_ret_col
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
     plt.show()
+
+def plot_asset_and_us10y(df: pd.DataFrame,
+                         asset_price_col: str,
+                         us10y_price_col: str = "US10Y_price",
+                         asset_label: str = "Asset",
+                         log_asset: bool = True,
+                         title: str | None = None):
+    """
+    Prix d'un actif (ex: NASDAQ_price) vs US10Y_price sur deux axes.
+    """
+    df = _ensure_datetime(df)
+    for c in [asset_price_col, us10y_price_col]:
+        if c not in df.columns:
+            raise ValueError(f"Colonne manquante: {c}")
+
+    fig, ax1 = plt.subplots(figsize=(12, 4))
+    ax1.plot(df["timestamp"], df[asset_price_col])
+    ax1.set_ylabel(f"{asset_label} price")
+    if log_asset:
+        ax1.set_yscale("log")
+    ax1.grid(True, alpha=0.3)
+
+    ax2 = ax1.twinx()
+    ax2.plot(df["timestamp"], df[us10y_price_col])
+    ax2.set_ylabel("US10Y (proxy yield)")
+
+    plt.title(title or f"{asset_label} vs US10Y")
+    fig.tight_layout()
+    plt.show()
+
+def plot_rolling_corr_generic(df: pd.DataFrame,
+                              x_col: str,
+                              y_col: str,
+                              window: int = 60,
+                              title: str | None = None):
+    """
+    Corrélation glissante entre deux colonnes de séries (returns, diffs, etc.).
+    """
+    df = _ensure_datetime(df)
+    for c in [x_col, y_col]:
+        if c not in df.columns:
+            raise ValueError(f"Colonne manquante: {c}")
+
+    d = df[["timestamp", x_col, y_col]].dropna()
+    corr = d[x_col].rolling(window).corr(d[y_col])
+
+    plt.figure(figsize=(12, 4))
+    plt.plot(d["timestamp"], corr)
+    plt.axhline(0, linewidth=1)
+    plt.title(title or f"Rolling corr ({window}j): {x_col} vs {y_col}")
+    plt.grid(True, alpha=0.3)
+    plt.tight_layout()
+    plt.show()
+
+def plot_event_study_rate_shocks_multi(df: pd.DataFrame,
+                                       shock_col: str = "US10Y_return_daily",
+                                       series_cols: list[str] | None = None,
+                                       shock_quantile: float = 0.99,
+                                       pre: int = 5,
+                                       post: int = 10,
+                                       title: str | None = None):
+    """
+    Event study autour des chocs |shock_col| >= quantile.
+    Trace le cumul moyen des log-returns (ou returns) pour plusieurs séries.
+    """
+    df = _ensure_datetime(df)
+    if shock_col not in df.columns:
+        raise ValueError(f"Colonne manquante: {shock_col}")
+
+    if series_cols is None:
+        raise ValueError("series_cols doit être fourni (ex: ['BTC_return_daily', 'NASDAQ_return_daily']).")
+
+    for c in series_cols:
+        if c not in df.columns:
+            raise ValueError(f"Colonne manquante: {c}")
+
+    d = df[["timestamp", shock_col] + series_cols].dropna().reset_index(drop=True)
+    thr = d[shock_col].abs().quantile(shock_quantile)
+    event_idx = d.index[d[shock_col].abs() >= thr].to_list()
+    if len(event_idx) == 0:
+        raise ValueError("Aucun événement détecté (seuil trop élevé ou données insuffisantes).")
+
+    window = np.arange(-pre, post + 1)
+
+    plt.figure(figsize=(10, 4))
+    for col in series_cols:
+        paths = []
+        for i in event_idx:
+            if i - pre < 0 or i + post >= len(d):
+                continue
+            r = d.loc[i - pre:i + post, col].to_numpy()
+            paths.append(np.cumsum(r))
+        if not paths:
+            continue
+        avg = np.mean(np.vstack(paths), axis=0)
+        plt.plot(window, avg, label=col)
+
+    plt.axvline(0, linewidth=1)
+    plt.title(title or f"Event study autour des chocs de taux (|{shock_col}| >= q{shock_quantile})")
+    plt.xlabel("Jours relatifs à l'événement")
+    plt.ylabel("Cumul (moyenne)")
+    plt.grid(True, alpha=0.3)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
