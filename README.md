@@ -1,6 +1,6 @@
 # Ensae-Prog2A
 # Projet Python pour la Data Science (2025-2026)
-Auteurs : Assoun Raphaël, Moreira de Abreu Bruno
+Auteurs : Assoun Raphaël,Dang Tran Tao Moreira de Abreu Bruno
 # Présentation du Sujet
 Les cryptomonnaies, et en particulier le Bitcoin, sont souvent présentées comme des actifs faiblement corrélés aux marchés financiers traditionnels, ce qui en ferait des outils potentiels de diversification. Toutefois, cette propriété semble se fragiliser lors de périodes de tensions économiques ou financières, où les comportements de marché tendent à se rapprocher. Ces épisodes soulèvent des questions importantes quant au rôle réel du Bitcoin face aux chocs macroéconomiques et aux crises de marché.
 L’objectif de ce projet est d’analyser l’évolution de la corrélation entre le Bitcoin et différents actifs financiers, et de mieux comprendre les mécanismes susceptibles d’expliquer ses variations dans le temps. En étudiant ces relations dans un cadre empirique, ce travail vise à évaluer dans quelle mesure le Bitcoin conserve ses caractéristiques d’actif alternatif, notamment dans les phases de stress, et à en tirer des enseignements en matière de gestion du risque et de diversification de portefeuille.
@@ -21,7 +21,7 @@ Nous avons testé d’abord un modèle simple avec le lag 1 de la corrélation, 
 Il suffit d'exécuter successivement les cellules du notebook : [notebookfinal.ipynb](https://github.com/raphaelassoun23/Projet-Python/blob/main/notebooks/notebookfinal.ipynb) <br>
 Vous pouvez l'ouvrir dans Collab directement ou l'ouvrir dans VS Code (ou un autre environnement python)
 
-Dans le dossier SRC [src], vous trouverez les parties les plus intéressantes du code, organisées en différents sous-dossiers selon leur fonction : récupération des données, nettoyage, analyses descriptives et visualisations graphiques. Le fichier analysis utilise ces modules via des fonctions pour effectuer les différentes analyses. Il contient également certaines de nos principales modélisations, accompagnées de commentaires explicatifs. Quant au fichier commodities, il est davantage un brouillon, réalisé par un camarade, explorant la corrélation entre les cryptomonnaies et les matières premières. 
+Dans le dossier SRC [src](https://github.com/raphaelassoun23/Projet-Python/tree/main/src), vous trouverez les parties les plus intéressantes du code, organisées en différents sous-dossiers selon leur fonction : récupération des données, nettoyage, analyses descriptives et visualisations graphiques. Le fichier analysis [analysis.ipynb](https://github.com/raphaelassoun23/Projet-Python/blob/main/notebooks/analysis.ipynb) utilise ces modules via des fonctions pour effectuer les différentes analyses. Il contient également certaines de nos principales modélisations, accompagnées de commentaires explicatifs. Quant au fichier commodities [commodities.ipynb](https://github.com/raphaelassoun23/Projet-Python/blob/main/notebooks/commodities.ipynb), il est davantage un brouillon, réalisé par un camarade, explorant la corrélation entre les cryptomonnaies et les matières premières (que l'on a synthétisé dans le notebook final).
 
 
 
