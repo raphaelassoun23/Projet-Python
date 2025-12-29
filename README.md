@@ -19,7 +19,7 @@ Nous avons testé d’abord un modèle simple avec le lag 1 de la corrélation, 
 
 # Navigation au sein du projet 
 Il suffit d'exécuter successivement les cellules du notebook : [notebookfinal.ipynb](https://github.com/raphaelassoun23/Projet-Python/blob/main/notebooks/notebookfinal.ipynb) <br>
-Vous pouvez l'ouvrir dans collab directement ou l'ouvrir dans VS Code (ou un autre environnement python  
+Vous pouvez l'ouvrir dans Collab directement ou l'ouvrir dans VS Code (ou un autre environnement python)
 
 
 
