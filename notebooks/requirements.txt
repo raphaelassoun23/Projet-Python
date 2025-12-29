@@ -1,5 +1,8 @@
 yfinance
-numpy
 pandas
+numpy
 matplotlib
 seaborn
+scikit-learn
+statsmodels
+requests
