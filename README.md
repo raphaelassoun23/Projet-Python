@@ -21,5 +21,7 @@ Nous avons testé d’abord un modèle simple avec le lag 1 de la corrélation, 
 Il suffit d'exécuter successivement les cellules du notebook : [notebookfinal.ipynb](https://github.com/raphaelassoun23/Projet-Python/blob/main/notebooks/notebookfinal.ipynb) <br>
 Vous pouvez l'ouvrir dans Collab directement ou l'ouvrir dans VS Code (ou un autre environnement python)
 
+Dans le dossier SRC [src], vous trouverez les parties les plus intéressantes du code, organisées en différents sous-dossiers selon leur fonction : récupération des données, nettoyage, analyses descriptives et visualisations graphiques. Le fichier analysis utilise ces modules via des fonctions pour effectuer les différentes analyses. Il contient également certaines de nos principales modélisations, accompagnées de commentaires explicatifs. Quant au fichier commodities, il est davantage un brouillon, réalisé par un camarade, explorant la corrélation entre les cryptomonnaies et les matières premières. 
+
 
 
