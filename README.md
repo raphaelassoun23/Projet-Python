@@ -15,10 +15,10 @@ Nous collectons des données historiques de prix et de volumes pour les principa
 Ensuite nous analysons des rendements journaliers de Bitcoin et Ethereum par rapport aux indices boursiers (S&P 500, NASDAQ, FTSE 100, Euro Stoxx 50, Nikkei 225), aux matières premières (or, argent, énergie, métaux) et aux taux d’intérêt américains. Nous étudions des corrélations classiques, glissantes et conditionnelles selon le régime de volatilité (VIX), ainsi que des variations autour de chocs macroéconomiques (COVID‑19, annonces commerciales). Les analyses incluent également les corrélations avec décalage temporel, les volumes des actifs et l’impact sur différentes configurations de portefeuilles.
 
 ***3. Modélisation*** <br>
-Nous avons testé d’abord un modèle simple avec le lag 1 de la corrélation, puis un modèle linéaire pour projeter la tendance en 2026, avant d’utiliser un modèle ARIMA pour capturer la dynamique temporelle de la corrélation BTC–NASDAQ.
+Nous avons testé d’abord un modèle simple avec le lag 1 de la corrélation, puis un modèle linéaire pour projeter la tendance en 2026, avant d’utiliser un modèle ARIMA pour capturer la dynamique temporelle de la corrélation BTC–NASDAQ sur 2026 également.
 
 # Navigation au sein du projet 
-Il suffit d'exécuter successivement les cellules du notebook : 
+Il suffit d'exécuter successivement les cellules du notebook : [notebookfinal.ipynb](https://github.com/raphaelassoun23/Projet-Python/blob/main/notebooks/notebookfinal.ipynb)
 
 
 
