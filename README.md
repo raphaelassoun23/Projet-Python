@@ -12,6 +12,7 @@ Dans quelle mesure les cryptomonnaies peuvent-elles jouer un rôle de diversific
 Nous collectons des données historiques de prix et de volumes pour les principales cryptomonnaies, indices boursiers et matières premières via Yahoo Finance, puis nous enrichissons le jeu de données avec des indicateurs macro-financiers (VIX, taux réels, énergie) issus de la base FRED. L’ensemble des séries est harmonisé sur une base temporelle commune, nettoyé et transformé en rendements journaliers logarithmiques afin de permettre une analyse cohérente des corrélations et des dynamiques temporelles.
 
 2. Analyse descriptive
+Ensuite nous analysons des rendements journaliers de Bitcoin et Ethereum par rapport aux indices boursiers (S&P 500, NASDAQ, FTSE 100, Euro Stoxx 50, Nikkei 225), aux matières premières (or, argent, énergie, métaux) et aux taux d’intérêt américains. Nous étudions des corrélations classiques, glissantes et conditionnelles selon le régime de volatilité (VIX), ainsi que des variations autour de chocs macroéconomiques (COVID‑19, annonces commerciales). Les analyses incluent également les corrélations avec décalage temporel, les volumes des actifs et l’impact sur différentes configurations de portefeuilles.
 
 3. Modélisation
 
