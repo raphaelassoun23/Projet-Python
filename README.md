@@ -18,7 +18,7 @@ Ensuite nous analysons des rendements journaliers de Bitcoin et Ethereum par rap
 Nous avons testé d’abord un modèle simple avec le lag 1 de la corrélation, puis un modèle linéaire pour projeter la tendance en 2026, avant d’utiliser un modèle ARIMA pour capturer la dynamique temporelle de la corrélation BTC–NASDAQ.
 
 # Navigation au sein du projet 
-
+Il suffit d'exécuter successivement les cellules du notebook : 
 
 
 
