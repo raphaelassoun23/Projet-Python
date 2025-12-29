@@ -8,7 +8,8 @@ L’objectif de ce projet est d’analyser l’évolution de la corrélation ent
 Dans quelle mesure les cryptomonnaies peuvent-elles jouer un rôle de diversification au regard de l’évolution de leur corrélation avec les actifs financiers traditionnels ?
 # Méthodologie :
 
-1. Collecte de données
+***1. Collecte de données***
+Nous collectons des données historiques de prix et de volumes pour les principales cryptomonnaies, indices boursiers et matières premières via Yahoo Finance, puis nous enrichissons le jeu de données avec des indicateurs macro-financiers (VIX, taux réels, énergie) issus de la base FRED. L’ensemble des séries est harmonisé sur une base temporelle commune, nettoyé et transformé en rendements journaliers logarithmiques afin de permettre une analyse cohérente des corrélations et des dynamiques temporelles.
 
 2. Analyse descriptive
 
